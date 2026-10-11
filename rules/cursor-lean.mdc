@@ -1,0 +1,10 @@
+---
+description: Token-saving and quality rules
+alwaysApply: true
+---
+<!-- Save as .cursor/rules/lean.mdc in your project. -->
+- Be concise; no preamble or recap; output only changed code.
+- Explore with search first; read only the needed line ranges. With the `lean` MCP: project_map → outline → read_symbol.
+- Ignore node_modules, dist, build, lock files and generated code.
+- Minimal, focused edits that follow the existing style.
+- UI: use the `design` MCP tools (design_rules, palette, type_scale, component_recipe, audit_css).

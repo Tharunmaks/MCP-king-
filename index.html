@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MCP King: MCP servers, rules and skills</title>
+<meta name="description" content="Find and copy MCP servers, rules files and SKILL.md skills for Claude, ChatGPT, Gemini, Cursor, Codex, Grok and Kimi, on iPhone, Android, Windows, macOS and Linux. Includes token savers and design tools.">
+<meta name="theme-color" content="#0f0f14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fcfbff" media="(prefers-color-scheme: light)">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script>try{var t=localStorage.getItem('mk-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="MCP King home">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path d="M4 24 6 9l6 6 4-9 4 9 6-6 2 15z" fill="currentColor"/><rect x="4" y="25" width="24" height="3" rx="1.5" fill="currentColor"/></svg>
+    <span>MCP King</span>
+  </a>
+  <nav aria-label="Main" id="menu">
+    <a href="#servers">Servers</a>
+    <a href="#registry">Live registry</a>
+    <a href="#tokens">Save tokens</a>
+    <a href="#library">Rules &amp; skills</a>
+    <a href="#devices">Phone &amp; PC setup</a>
+  </nav>
+  <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>
+  </button>
+  <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+  </button>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <p class="eyebrow">MCP servers · rules · skills</p>
+    <h1>Give your AI superpowers. <span class="grad">Spend fewer tokens.</span></h1>
+    <p class="lead">Copy-ready MCP servers, rules files and skills for Claude, ChatGPT, Gemini, Cursor, Codex, Grok and Kimi, on iPhone, Android, Windows, macOS and Linux. Pick your setup once and every command on this page fits it.</p>
+
+    <form class="setup" id="setup" aria-label="Your setup">
+      <label>I use
+        <select id="client"></select>
+      </label>
+      <label>on
+        <select id="device"></select>
+      </label>
+    </form>
+    <p class="setup-note" id="setup-note" aria-live="polite"></p>
+
+    <dl class="stats">
+      <div><dt id="stat-curated">0</dt><dd>hand-picked servers</dd></div>
+      <div><dt id="stat-registry">1000s</dt><dd>more, live from the official MCP Registry</dd></div>
+      <div><dt id="stat-rules">0</dt><dd>rules files</dd></div>
+      <div><dt id="stat-skills">0</dt><dd>SKILL.md skills</dd></div>
+    </dl>
+  </section>
+
+  <section class="section" id="featured" aria-labelledby="featured-h">
+    <div class="section-head">
+      <h2 id="featured-h">Made here</h2>
+      <p>Free, open-source servers from this project and Tharunmaks. No API keys.</p>
+    </div>
+    <div class="grid" id="featured-grid"></div>
+  </section>
+
+  <section class="section band" id="tokens" aria-labelledby="tokens-h">
+    <div class="section-head">
+      <h2 id="tokens-h">Running out of tokens? Do these three things.</h2>
+      <p>Most of an AI coder's tokens go into reading files. Read less and it lasts much longer.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>Add the Lean Context server</h3>
+        <p>Your AI gets a project map, file outlines and "read just this function" tools instead of reading whole files.</p>
+        <pre class="code" id="lean-cmd"></pre>
+        <button class="btn btn-primary" type="button" data-copy-from="lean-cmd">Copy command</button>
+      </li>
+      <li>
+        <h3>Drop in the rules file</h3>
+        <p>Short answers, no recaps, outline-before-read. Save it as <code>CLAUDE.md</code> (or AGENTS.md / GEMINI.md) in your project.</p>
+        <button class="btn btn-ghost" type="button" data-copy-rule="CLAUDE.md">Copy CLAUDE.md</button>
+        <button class="btn btn-ghost" type="button" data-copy-rule="AGENTS.md">Copy AGENTS.md</button>
+      </li>
+      <li>
+        <h3>Keep the context small</h3>
+        <p>Turn off MCP servers you are not using: every connected server's tool list is sent with every message. In Claude Code use <code>/clear</code> between tasks and <code>/compact</code> on long ones.</p>
+        <a class="btn btn-ghost" href="#servers" data-filter-tag="token-saver">More token savers</a>
+      </li>
+    </ol>
+    <div class="measure">
+      <h3>Measured with Lean Context on real files</h3>
+      <div class="table-wrap">
+        <table>
+          <caption class="sr-only">Tokens needed to read a whole file compared with its outline plus one function</caption>
+          <thead><tr><th scope="col">File</th><th scope="col">Whole file</th><th scope="col">Outline + one function</th><th scope="col">Saved</th></tr></thead>
+          <tbody>
+            <tr><td>Chroma <code>helix/catalog.js</code> (736 lines)</td><td>8,414</td><td>1,053</td><td><strong>87%</strong></td></tr>
+            <tr><td>ExpertStream <code>craft/expertcraft_mcp.py</code> (618 lines)</td><td>8,330</td><td>875</td><td><strong>89%</strong></td></tr>
+            <tr><td>ExpertStream <code>mcp/expertstream_mcp.py</code></td><td>24,557</td><td>3,768</td><td><strong>85%</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fine">Estimates at about 4 characters per token, from the server's <code>token_report</code> tool. Your total saving per session is lower than this because answers, edits and tool lists also cost tokens; try <code>token_report</code> on your own files.</p>
+    </div>
+  </section>
+
+  <section class="section" id="servers" aria-labelledby="servers-h">
+    <div class="section-head">
+      <h2 id="servers-h">Server directory</h2>
+      <p>Hand-picked, real servers. Each card gives the exact setup for your app and device.</p>
+    </div>
+    <div class="filters">
+      <label class="search">
+        <span class="sr-only">Search servers</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="Search: figma, postgres, token, android…" autocomplete="off">
+      </label>
+      <div class="toggles" role="group" aria-label="Filters">
+        <label class="chip-toggle"><input type="checkbox" id="f-phone"> Works in phone apps</label>
+        <label class="chip-toggle"><input type="checkbox" id="f-nokey"> No API key</label>
+      </div>
+    </div>
+    <div class="chips" id="cats" role="group" aria-label="Categories"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="section band" id="registry" aria-labelledby="registry-h">
+    <div class="section-head">
+      <h2 id="registry-h">Live: the official MCP Registry</h2>
+      <p>Thousands more servers, searched live from <a href="https://registry.modelcontextprotocol.io" rel="noopener">registry.modelcontextprotocol.io</a>. These are published by their authors and not checked by us: read the project page before you install one.</p>
+    </div>
+    <form class="filters" id="reg-form" role="search">
+      <label class="search">
+        <span class="sr-only">Search the registry</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <input id="reg-q" type="search" placeholder="Search the registry: weather, notion, crypto…" autocomplete="off">
+      </label>
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    <p class="count" id="reg-count" aria-live="polite"></p>
+    <div class="grid" id="reg-grid"></div>
+    <div class="center"><button class="btn btn-ghost" id="reg-more" type="button" hidden>Load more</button></div>
+    <div class="more-dirs">
+      <h3>Even more directories</h3>
+      <ul>
+        <li><a href="https://smithery.ai" rel="noopener">Smithery</a>: hosted servers you can connect by URL</li>
+        <li><a href="https://glama.ai/mcp/servers" rel="noopener">Glama</a>: large searchable index with security grades</li>
+        <li><a href="https://www.pulsemcp.com/servers" rel="noopener">PulseMCP</a>: daily-updated directory</li>
+        <li><a href="https://mcp.so" rel="noopener">mcp.so</a>: community catalogue</li>
+        <li><a href="https://hub.docker.com/mcp" rel="noopener">Docker MCP Catalog</a>: containerised servers</li>
+        <li><a href="https://github.com/punkpeye/awesome-mcp-servers" rel="noopener">awesome-mcp-servers</a>: the big GitHub list</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="library" aria-labelledby="library-h">
+    <div class="section-head">
+      <h2 id="library-h">Rules files and skills</h2>
+      <p>Rules files shape every answer. Skills (SKILL.md) teach the AI a whole workflow and load only when needed, so they cost almost nothing until used.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Library">
+      <button role="tab" id="tab-rules" aria-selected="true" aria-controls="panel-rules" type="button">Rules files</button>
+      <button role="tab" id="tab-skills" aria-selected="false" aria-controls="panel-skills" type="button" tabindex="-1">Skills</button>
+    </div>
+    <div role="tabpanel" id="panel-rules" aria-labelledby="tab-rules" class="grid" tabindex="0"></div>
+    <div role="tabpanel" id="panel-skills" aria-labelledby="tab-skills" hidden tabindex="0">
+      <div class="callout">
+        <p><strong>Install every skill at once</strong> (Claude Code, PC or Termux):</p>
+        <pre class="code" id="skills-cmd">git clone https://github.com/Tharunmaks/MCP-king- ~/MCP-king-
+mkdir -p ~/.claude/skills &amp;&amp; cp -r ~/MCP-king-/skills/* ~/.claude/skills/</pre>
+        <button class="btn btn-primary" type="button" data-copy-from="skills-cmd">Copy</button>
+        <p class="fine">Claude apps (web, desktop, phone): Settings → Capabilities → Skills → upload a skill folder as a .zip. Other AIs: paste the skill text into the chat or your rules file.</p>
+      </div>
+      <div class="grid" id="skills-grid"></div>
+    </div>
+  </section>
+
+  <section class="section band" id="devices" aria-labelledby="devices-h">
+    <div class="section-head">
+      <h2 id="devices-h">Phone and PC setup</h2>
+      <p>Phone apps can only use servers that have a URL. Computers can run any server.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Device" id="device-tabs"></div>
+    <div id="device-panel" class="prose" role="tabpanel" tabindex="0"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p><strong>MCP King</strong> is open source: <a href="https://github.com/Tharunmaks/MCP-king-" rel="noopener">github.com/Tharunmaks/MCP-king-</a>. Also by Tharunmaks: <a href="https://github.com/Tharunmaks/Chroma-node" rel="noopener">Chroma + Helix</a>, <a href="https://github.com/Tharunmaks/Stream-" rel="noopener">ExpertStream + Expert Craft</a>.</p>
+  <p class="fine">Third-party servers belong to their authors. Commands change over time; each card links to its source. Only give servers the access they need, and prefer read-only modes for databases.</p>
+</footer>
+
+<dialog class="modal" id="details" aria-labelledby="d-title">
+  <div class="modal-head">
+    <div>
+      <h2 id="d-title"></h2>
+      <p class="muted" id="d-by"></p>
+    </div>
+    <button class="icon-btn" type="button" id="d-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div id="d-body"></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data/catalog.js"></script>
+<script src="data/library.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

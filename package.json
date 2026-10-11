@@ -1,0 +1,16 @@
+{
+  "name": "mcp-king",
+  "version": "1.0.0",
+  "description": "MCP servers, rules files and SKILL.md skills for Claude, ChatGPT, Gemini, Cursor, Codex, Grok and Kimi on phone and PC. Includes the Lean Context (token saver), Design Kit and Helix 3D MCP servers.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/build-library.mjs",
+    "serve": "python3 -m http.server 8000",
+    "check:site": "node tests/site.check.cjs http://127.0.0.1:8000/"
+  },
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/Tharunmaks/MCP-king-.git" }
+}
